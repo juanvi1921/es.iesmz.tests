@@ -22,8 +22,15 @@ public class DiasLluvia {
         return false;
     }
 
-    public boolean consultarDia (int dia, int mes) {
-        return false;
+    public boolean consultarDia (int mes, int dia) {
+        if (calendario[mes][dia]) {
+            System.out.println("Ese dia ha llovido.");
+            return true;
+        } else {
+            System.out.println("Ese dia no ha llovido.");
+            return false;
+        }
+        //return calendario[mes][dia]; Es pot fer en una linea si no vols fer els print.
     }
 
     public int contarDiasLluviosos() {
