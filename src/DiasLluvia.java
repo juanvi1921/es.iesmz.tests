@@ -6,7 +6,7 @@ public class DiasLluvia {
     }
 
     public boolean registroDia (int mes, int dia, boolean haLlovido) {
-        if ((mes > 0 && mes <= 12) && (dia > 0 && dia <= 31)) {
+        if ((mes >= 1 && mes <= 12) && (dia >= 1 && dia <= 31)) {
             if (haLlovido) {
                 calendario[mes][dia] = true;
                 System.out.println("Dia registrado.");
@@ -69,7 +69,7 @@ public class DiasLluvia {
 
     public int cont1rTrimestre() {
         int dies1rTrimestre = 0;
-        for (int i = 0; i < 3; i++) {
+        for (int i = 1; i <= 3; i++) {
             for (int j = 0; j < calendario[i].length; j++) {
                 if (calendario[i][j]) {
                     dies1rTrimestre++;
@@ -81,7 +81,7 @@ public class DiasLluvia {
 
     public int cont2nTrimestre() {
         int dies2nTrimestre = 0;
-        for (int i = 0; i < 3; i++) {
+        for (int i = 4; i <= 6; i++) {
             for (int j = 0; j < calendario[i].length; j++) {
                 if (calendario[i][j]) {
                     dies2nTrimestre++;
@@ -93,7 +93,7 @@ public class DiasLluvia {
 
     public int cont3rTrimestre() {
         int dies3rTrimestre = 0;
-        for (int i = 0; i < 3; i++) {
+        for (int i = 7; i <= 9; i++) {
             for (int j = 0; j < calendario[i].length; j++) {
                 if (calendario[i][j]) {
                     dies3rTrimestre++;
@@ -105,7 +105,7 @@ public class DiasLluvia {
 
     public int cont4tTrimestre() {
         int dies4tTrimestre = 0;
-        for (int i = 0; i < 3; i++) {
+        for (int i = 10; i <= 12; i++) {
             for (int j = 0; j < calendario[i].length; j++) {
                 if (calendario[i][j]) {
                     dies4tTrimestre++;
@@ -116,10 +116,14 @@ public class DiasLluvia {
     }
 
     public int primerDiaLluvia() {
-        for (int i = 0; i < calendario.length; i++) {
-            for (int j = 0; j < calendario[i].length; j++) {
+        for (int i = 1; i < calendario.length; i++) {
+            for (int j = 1; j < calendario[i].length; j++) {
                 if (calendario[i][j]) {
-                    return (j + 1) + (i * calendario[i].length);
+                    if (i == 1) {
+                        return j;
+                    } else {
+                        return j + ((i - 1)  * calendario[i].length - i + 1);
+                    }
                 }
             }
         }
