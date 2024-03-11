@@ -44,4 +44,74 @@ public class DiasLluvia {
         }
         return contDiasLluviosos;
     }
+
+    public int trimestreMasLluvioso() {
+        int dies1rTrimestre = cont1rTrimestre();
+        int dies2nTrimestre = cont2nTrimestre();
+        int dies3rTrimestre = cont3rTrimestre();
+        int dies4tTrimestre = cont4tTrimestre();
+
+        int trimestreMasLluvioso = Math.max(dies1rTrimestre, Math.max(dies2nTrimestre, Math.max(dies3rTrimestre, dies4tTrimestre)));
+
+        if(trimestreMasLluvioso == dies1rTrimestre) {
+            return 1;
+        } else if (trimestreMasLluvioso == dies2nTrimestre) {
+            return 2;
+        } else if (trimestreMasLluvioso == dies3rTrimestre) {
+            return 3;
+        } else if (trimestreMasLluvioso == dies4tTrimestre) {
+            return 4;
+        } else {
+            return 0;
+        }
+
+    }
+
+    public int cont1rTrimestre() {
+        int dies1rTrimestre = 0;
+        for (int i = 0; i < 3; i++) {
+            for (int j = 0; j < calendario[i].length; j++) {
+                if (calendario[i][j]) {
+                    dies1rTrimestre++;
+                }
+            }
+        }
+        return dies1rTrimestre;
+    }
+
+    public int cont2nTrimestre() {
+        int dies2nTrimestre = 0;
+        for (int i = 0; i < 3; i++) {
+            for (int j = 0; j < calendario[i].length; j++) {
+                if (calendario[i][j]) {
+                    dies2nTrimestre++;
+                }
+            }
+        }
+        return dies2nTrimestre;
+    }
+
+    public int cont3rTrimestre() {
+        int dies3rTrimestre = 0;
+        for (int i = 0; i < 3; i++) {
+            for (int j = 0; j < calendario[i].length; j++) {
+                if (calendario[i][j]) {
+                    dies3rTrimestre++;
+                }
+            }
+        }
+        return dies3rTrimestre;
+    }
+
+    public int cont4tTrimestre() {
+        int dies4tTrimestre = 0;
+        for (int i = 0; i < 3; i++) {
+            for (int j = 0; j < calendario[i].length; j++) {
+                if (calendario[i][j]) {
+                    dies4tTrimestre++;
+                }
+            }
+        }
+        return dies4tTrimestre;
+    }
 }
