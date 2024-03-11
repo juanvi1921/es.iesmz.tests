@@ -35,8 +35,13 @@ public class DiasLluvia {
 
     public int contarDiasLluviosos() {
         int contDiasLluviosos = 0;
-        contDiasLluviosos++;
+        for (int i = 0; i < calendario.length; i++) {
+            for (int j = 0; j < calendario[i].length; j++) {
+                if (calendario[i][j]) {
+                    contDiasLluviosos++;
+                }
+            }
+        }
         return contDiasLluviosos;
     }
-
 }
