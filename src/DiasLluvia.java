@@ -114,4 +114,15 @@ public class DiasLluvia {
         }
         return dies4tTrimestre;
     }
+
+    public int primerDiaLluvia() {
+        for (int i = 0; i < calendario.length; i++) {
+            for (int j = 0; j < calendario[i].length; j++) {
+                if (calendario[i][j]) {
+                    return (j + 1) + (i * calendario[i].length);
+                }
+            }
+        }
+        return -1;
+    }
 }
