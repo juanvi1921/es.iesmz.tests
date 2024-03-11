@@ -1,8 +1,8 @@
 public class DiasLluvia {
     private boolean calendario [][];
 
-    public DiasLluvia(boolean Llovido) {
-        this.calendario = new boolean[12][31];
+    public DiasLluvia() {
+        this.calendario = new boolean[13][32];
     }
 
     public boolean registroDia (int mes, int dia, boolean haLlovido) {
